@@ -23,7 +23,8 @@
         <nav class="navside">
             <a th:href="@{/schedule}">Schedule</a>
             <a th:href="@{/tickets}">Tickets</a>
-            <a th:href="@{/login}">Sign In</a>
+            <a th:href="@{/login}" th:if="${userInfo} == null">Sign In</a>
+            <a th:href="@{/login}" th:if="${userInfo} != null">Sign Out</a>
         </nav>
     </div>
 </header>
