@@ -1,0 +1,9 @@
+.seats{
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.seats:hover{
+    background-color: lightblue;
+    cursor: pointer;
+}

@@ -1,0 +1,372 @@
+body{
+    font-family: 'Tourney', cursive;
+}
+
+body .container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 5px;
+}
+body a:hover{
+    text-decoration: none;
+}
+
+/* header */
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #d00;
+}
+.header-item{
+    line-height: 40px;
+    display: flex;
+}
+.logo{
+    height: 40px;
+    margin-right: auto;
+    font-size: 0;
+}
+.logo img{
+    height:100%;
+    border-radius: 5px;
+}
+nav{
+    transform: translateX(5px);
+}
+nav a{
+    height: 50px;
+    padding: 5px 10px 0 10px;
+    display: inline-block;
+    transform: translateY(-5px);
+    color: white;
+}
+nav a:hover{
+    background-color: black;
+    color: gold;
+}
+header .fa{
+    padding: 0 10px;
+    line-height: 50px;
+    display: none;
+    color: white;
+}
+
+/* main */
+main{
+    background-color: #eee;
+}
+.head{
+    height: 90px;
+    padding: 10px 15%;
+    text-align: center;
+}
+.head h2{
+    font-size: 3rem;
+    border-bottom: red 5px solid;
+    font-family: 'Tourney', cursive;
+}
+
+/* main section */
+.section-item .col-12, .section-item .col-sm-6, .section-item .col-lg-4, .section-item .col-xl-3{
+    padding: 15px;
+}
+.section-item .dropdown{
+    margin: 15px 10px;
+    padding: 10px;
+    border: 0;
+    width: 95%;
+    height: 100%;
+    border-top: 3px solid red;
+    border-radius: 0 0 20px 0;
+    background-color: black;
+    box-shadow: rgb(0, 0, 0,.5) 2px 2px 15px;
+    color: white;
+}
+.section-item .schedule-item{
+    height: 95%;
+    display: flex;
+}
+.section-item .schedule-item p{
+    text-align: center;
+}
+.section-item .schedule-winner{
+    width: 50%;
+    padding-top: 15px;
+}
+.section-item .winner-driver{
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(71, 71, 71);
+    width: 90%;
+    border-radius: 0 0 20px 0;
+}
+.section-item .schedule-track{
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    border-radius: 0 0 20px 0;
+}
+.section-item .schedule-winner img{
+    width: 100%;
+}
+.section-item .schedule-time{
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(71, 71, 71);
+    border-radius: 0 0 20px 0;
+}
+.section-item .schedule-date{
+    height: 30%;
+    padding: 10%;
+}
+.section-item .schedule-time img{
+    width: 80%;
+    margin: 0 0 15px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.section-item .schedule-place{
+    height: 70%;
+}
+.section-item .schedule-flag{
+    height: 60%;
+}
+.section-item .schedule-dropdown{
+    display: none;
+    width: 100%;
+    padding: 0;
+    background-color: rgb(240, 240, 110);
+    border-radius: 0 0px 20px 20px;
+    color: black;
+    font-size: 12px;
+    position: absolute;
+    bottom: -105px;
+    left: 0px;
+    z-index: 1;
+}
+.section-item .track-dropdown{
+    bottom: -173px;
+}
+.section-item .dropdown:hover .schedule-dropdown{
+    display: block;
+}
+.section-item .schedule-trophy,
+.section-item .schedule-track-dropdown{
+    display: flex;
+}
+.section-item .schedule-trophy-item,
+.section-item .schedule-track-item{
+    width: 50%;
+    padding: 5px 10px 0 10px;
+}
+
+.nextrace .section-item{
+    max-width: 1200px;
+    background-color: black;
+    width: 100%;
+    box-shadow: rgb(119, 3, 3) 2px 2px 15px;
+    margin: 0 auto;
+    font-family: 'Tourney', cursive;
+}
+.nextrace fieldset{
+    margin: 20px auto;
+    padding: 15px;
+    border: 0;
+    border-top: 3px solid gold;
+    border-right: 3px solid gold;
+    border-bottom: 3px solid gold;
+    border-radius: 0 40px 40px 0;
+    width: 95%;
+    height: 90%;
+    color: white;
+}
+.nextrace legend{
+    min-width: 0px;
+    max-width: 20%;
+    position: relative;
+    margin: 0 -20px;
+    padding: 5px 20px;
+    color: red;
+    font-size: 32px;
+}
+.nextrace .schedule-item{
+    display: flex;
+    padding: 10px 0 30px 0;
+}
+.nextrace .schedule-time{
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.nextrace .track{
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.nextrace .schedule-winner{
+    width: 25%;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.nextrace .schedule-winner p{
+    position: relative;
+    left: -20px;
+}
+.nextrace .schedule-winning{
+    width: 25%;
+}
+.nextrace .schedule-winning p:nth-child(2n+1){
+    color: red;
+    border-bottom: red solid 3px;
+    padding: 10px 0;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
+footer .footer-item{
+    line-height: 90px;
+    padding: 5px 50px;
+    display: flex;
+}
+.footer-item-copy{
+    margin-left: auto;
+    font-size: 1.3em;
+    color: white;
+}
+.footer-item-social{
+    display: flex;
+}
+.footer-item-social a{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.footer-item-social a:hover{
+    color: gold;
+}
+
+
+/* medium */
+@media screen and (max-width:992px) {
+    /* nextrace */
+    .nextrace legend{
+        max-width: 25%;
+    }
+    .nextrace .schedule-time{
+        width: calc(100% / 3);
+    }
+    .nextrace .track{
+        width: calc(100% / 3);
+        padding: 0 0 0 50px;
+    }
+    .nextrace .schedule-winner{
+        width: calc(100% / 3);
+    }
+    .nextrace .schedule-winning{
+        display: none;
+    }
+}
+
+/* small */
+@media screen and (max-width:768px) {
+    /* header */
+    header .fa{
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        z-index: 5;
+    }
+    .navside{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 250px;
+        padding: 50px 0 0 0;
+        background-color: #d00;
+        z-index: 3;
+        text-align: center;
+        border-radius: 0 0 0 40px;
+    }
+    .navside a{
+        transform: translateY(0);
+    }
+    nav a:last-child:hover{
+        border-radius: 0 0 0 40px;
+    }
+
+    /* nextrace */
+    .nextrace legend{
+        max-width: 35%;
+    }
+    .nextrace .schedule-time{
+        width: 50%;
+    }
+    .nextrace .track{
+        display: none;
+    }
+    .nextrace .schedule-winner{
+        width: 50%;
+    }
+
+    /* footer */
+    .footer-item-copy{
+        font-size: 1em;
+    }
+}
+
+/* extra small */
+@media screen and (max-width:600px) {
+    /* word */
+    .main-item h2,.main-item h3,.main-item h4,.main-item h5,.main-item h6,.main-item p{
+        font-size: 1rem;
+    }
+
+    /* nextrace */
+    .nextrace legend{
+        max-width: 40%;
+    }
+    .nextrace .schedule-item{
+        display: flex;
+        justify-content: center;
+    }
+    .nextrace .schedule-time{
+        display: none;
+    }
+    .nextrace .schedule-winner{
+        width: 70%;
+    }
+
+    /* footer */
+    footer .footer-item{
+        padding: 10px 10px 0 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    footer{
+        height: 200px;
+    }
+    .footer-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-item-copy{
+        margin-right: 0;
+    }
+}

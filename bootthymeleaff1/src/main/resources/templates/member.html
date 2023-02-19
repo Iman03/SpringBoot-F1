@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.13.2/datatables.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Tourney:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/styles/schedule.css}">
+</head>
+<body th:onload="changeColumnColor()">
+<header>
+  <div class="header-item container">
+    <h1 class="logo">
+      <a th:href="@{/home}">
+        <img th:src="@{/images/f1white.png}" alt="logo">
+      </a>
+    </h1>
+    <nav class="navside">
+      <a th:href="@{/schedule}">Schedule</a>
+      <a th:href="@{/tickets}">Tickets</a>
+      <a th:href="@{/login}">Sign Out</a>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <div th:text="${token}" id="token" style="display: none"></div>
+  <div class="head"><h2 th:text="'Hi ' + ${userInfo.name} + '! Welcome back!'"></h2></div>
+  <div class="container" style="display: flex; flex-direction: column; align-items: center">
+    <p>Your past orders</p>
+    <table class="table table-bordered" style="width: 60%; font-family: 'Arial Black'">
+      <thead class="thead-dark">
+      <tr>
+        <th th:text="'OrderId'" style="width: 80px"></th>
+        <th th:text="'Total Cost'"></th>
+        <th th:text="'Order Date'"></th>
+        <th th:text="'Seat'"></th>
+        <th th:text="'Price'"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="order : ${orderDetails}" th:class="'ticketColor' + ${order.orderId}">
+        <td th:text="${order.orderId}" style="text-align: center">Name</td>
+        <td th:text="${order.orderTotal}">Position</td>
+        <td th:text="${#dates.format(order.orderDate, 'yyyy/MM/dd')}">Salary</td>
+        <td th:text="${order.ticketsSeat}">Office</td>
+        <td th:text="${order.ticketsPrice}">Start date</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-item container">
+    <div class="footer-item-copy">
+      &copy;2023. Design by Iman
+    </div>
+  </div>
+</footer>
+
+<script th:inline="javascript">
+  function changeColumnColor(){
+    for (let i = 0; i < 100; i++) {
+      let x = document.getElementsByClassName(`ticketColor${i}`);
+      let y = i;
+      if (i > 20){y -= 20} else if (i > 10 && i < 20){y -= 10}
+      for (let j = 0; j < x.length; j++) {
+        x[j].style.backgroundColor = `rgb(${(0 + 50 * y) > 255 ? (0 + 50 * y) - 255 : (0 + 50 * y)},
+                                          ${(130 + 40 * y) > 255 ? (130 + 40 * y) - 255 : (130 - 40 * y)},
+                                          ${(255 - 30 * y) < 0 ? (255 - 30 * y) + 255 : (255 - 30 * y)}, 0.55)`;
+      }
+    }
+
+    // set token inside localStorage
+    let token = document.getElementById("token").innerText;
+    localStorage.setItem("token", token);
+  }
+</script>
+</body>
+</html>
